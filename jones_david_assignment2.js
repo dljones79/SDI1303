@@ -23,5 +23,17 @@ var targetSpotted = function(spotted){
 	}
 }; //targetSpotted
 
-targetSpotted(true);
+// Boolean Function to determine if group is set.
+var groupSet = function(numGroupMembers, warded){
+	if (numGroupMembers === 6 && warded === true){
+		readyToPull = "We are ready to pull!";
+		return readyToPull;
+	} else { 
+		readyToPull = "You guys are fail. We aren't ready yet.";
+	}
+};
+
+groupSet(4, true);
+
+console.log (readyToPull);
 
