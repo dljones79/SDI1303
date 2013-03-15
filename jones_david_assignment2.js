@@ -8,7 +8,12 @@
 var groupSize = 6
 	hitPoints = 27000,
 	mobName = "Avatar of Fear",
-	groupMembers = [],
+	groupMembers = ["Attritank", 
+		"Attricane", 
+		"Trevail", 
+		"Vaylin", 
+		"Royale", 
+		"Atun"],
 	loot1 = "Coif of Enlivened Chance",
 	loot2 = "Bangle of Demise",
 	loot3 = "Corrupted Greaves of Sorrow"
@@ -55,9 +60,23 @@ var loot = function(item1, item2, item3){
 	return spoilsOfWar;
 }//loot
 
+// Array Function to thank group members
+var thankGroup = function(numMembers, memberNames){
+	for (var memberNumber = numMembers - 1; memberNumber > 0; memberNumber--) {
+		console.log("I'd like to thank " + memberNames[memberNumber] +
+			" for helping with this epic battle!");
+	}
+	doneThanking = "You guys did great!";
+	return doneThanking;
+}// thankGroup
+
+thankGroup(groupSize, groupMembers);
+console.log(doneThanking);
+
+/*
 loot(loot1, loot2, loot3);
 console.log(spoilsOfWar);
-/*
+
 groupSet(4, true);
 
 console.log (readyToPull);
