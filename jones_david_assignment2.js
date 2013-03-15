@@ -5,16 +5,16 @@
 // Project 2
 
 // Variables
-var groupSize = 6
-	hitPoints = 27000,
-	mobName = "Avatar of Fear",
-	groupMembers = ["Attritank", 
+var groupSize = 6								//group size
+	hitPoints = 27000,							//mobs hit point total
+	mobName = "Avatar of Fear",					//mob name
+	groupMembers = ["Attritank", 				//array holding group member names
 		"Attricane", 
 		"Trevail", 
 		"Vaylin", 
 		"Royale", 
 		"Atun"],
-	loot1 = "Coif of Enlivened Chance",
+	loot1 = "Coif of Enlivened Chance",			//strings holding loot names
 	loot2 = "Bangle of Demise",
 	loot3 = "Corrupted Greaves of Sorrow"
 ; // Variables
@@ -31,7 +31,17 @@ var targetSpotted = function(spotted){
 // Boolean Function to determine if group is set.
 var groupSet = function(numGroupMembers, warded){
 	if (numGroupMembers === 6 && warded === true){
-		readyToPull = "We are ready to pull!";
+	    count = 10; //initializing variable for count down
+		var countDown = function(){
+			for (var x = 10; x > 0; x--){
+				if (x != 1){
+					pluralization = " seconds";
+				}else{pluralization = " second"};
+			console.log("Pulling in " + x + pluralization + ".");
+			}
+		}; //countDown
+		readyToPull = "We are ready to pull!"
+		countDown();
 		return readyToPull;
 	} else { 
 		readyToPull = "You guys are fail. We aren't ready yet.";
@@ -70,18 +80,22 @@ var thankGroup = function(numMembers, memberNames){
 	return doneThanking;
 }// thankGroup
 
-thankGroup(groupSize, groupMembers);
-console.log(doneThanking);
+//Calling Functions
+targetSpotted(true);
 
-/*
+groupSet(6, true);
+console.log (readyToPull);
+
+dpsNeeded(hitPoints);
+console.log(mobDefeated);
+
 loot(loot1, loot2, loot3);
 console.log(spoilsOfWar);
 
-groupSet(4, true);
+thankGroup(groupSize, groupMembers);
+console.log(doneThanking);
 
-console.log (readyToPull);
+console.log("On to even more epic battles!");
 
 
-dpsNeeded(hitPoints);
 
-console.log(mobDefeated); */
