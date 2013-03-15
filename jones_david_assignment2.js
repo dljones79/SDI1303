@@ -5,11 +5,13 @@
 // Project 2
 
 // Variables
-
-var trueCondition = true
-	groupSize = 6,
+var groupSize = 6
 	hitPoints = 27000,
-	mobName = "Avatar of Fear"
+	mobName = "Avatar of Fear",
+	groupMembers = [],
+	loot1 = "Coif of Enlivened Chance",
+	loot2 = "Bangle of Demise",
+	loot3 = "Corrupted Greaves of Sorrow"
 ; // Variables
 
 // Procedural Function for determining if target is spotted.
@@ -33,7 +35,6 @@ var groupSet = function(numGroupMembers, warded){
 }; //groupSet
 
 // Number Function to calculate dps (Damage Per Second) needed to kill mob before wipe.
-
 var dpsNeeded = function(hitPoints){
 	var timeToWipe = 60; //in seconds
 	var dps = hitPoints/timeToWipe;
@@ -46,12 +47,22 @@ var dpsNeeded = function(hitPoints){
 		" seconds, at " + dps + " damage per second!";
 	return mobDefeated;
 }; // dpsNeeded
+
+// String Function telling what was in the treasure chest from the kill
+var loot = function(item1, item2, item3){
+	spoilsOfWar = "The treasure chest contains the " + item1 + ", a " + item2 +
+		", and the " + item3 + ". Hooray!";
+	return spoilsOfWar;
+}//loot
+
+loot(loot1, loot2, loot3);
+console.log(spoilsOfWar);
 /*
 groupSet(4, true);
 
 console.log (readyToPull);
-*/
+
 
 dpsNeeded(hitPoints);
 
-console.log(mobDefeated);
+console.log(mobDefeated); */
